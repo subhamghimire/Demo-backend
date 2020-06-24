@@ -63,7 +63,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="/users"
-                           class="{{ Route::is('user*') ? 'active ' : '' }}nav-link d-flex align-items-center">
+                           class="{{ Route::is('users*') ? 'active ' : '' }}nav-link d-flex align-items-center">
                             <i class="fas fa-users"></i> &nbsp;&nbsp;
                             <span>Users</span>
                         </a>

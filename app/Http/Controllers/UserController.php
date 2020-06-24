@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function index(): \Illuminate\Http\Response
+    public function index()
     {
         $users = User::all();
         return view('users.index', compact('users'));
@@ -22,7 +24,7 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -33,9 +35,9 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function store(Request $request): \Illuminate\Http\Response
+    public function store(Request $request): Response
     {
         $this->validate($request, [
             'name' => 'required',
@@ -58,7 +60,7 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
@@ -69,9 +71,9 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function edit($id): \Illuminate\Http\Response
+    public function edit($id): Response
     {
         if (!$id) {
             return redirect()->back()->with('warning', 'user you want to edit does not exist');
@@ -85,9 +87,9 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function update(Request $request, $id): \Illuminate\Http\Response
+    public function update(Request $request, $id): Response
     {
         $this->validate($request, [
             'name' => 'required',
@@ -109,9 +111,9 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function destroy($id): \Illuminate\Http\Response
+    public function destroy($id): Response
     {
         $user = User::find($id);
         if ($id) {
