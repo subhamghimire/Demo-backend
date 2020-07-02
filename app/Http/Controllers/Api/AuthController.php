@@ -81,7 +81,7 @@ class AuthController extends Controller
 
         $user = User::where('phone', $username)->orWhere('email', $username)->first();
 
-        if (!$username) {
+        if (!$user) {
             return response()->json([
                 'success' => false,
                 'message' => 'The email or phone number does not exist.'

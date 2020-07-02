@@ -21,5 +21,8 @@ Route::post('login', 'Api\AuthController@login');
 
 Route::middleware('auth:sanctum')->group(static function () {
     Route::get('me', 'Api\AuthController@index');
+    Route::get('questions', 'Api\QuestionController@index');
+    Route::post('questions', 'Api\QuestionController@store');
+    Route::get('news', 'Api\NewsController@index');
     Route::post('users/{id}', 'Api\AuthController@update');
 });

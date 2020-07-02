@@ -16,6 +16,7 @@
     <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
+    <link href="{{ asset('css/editor.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 
@@ -68,6 +69,20 @@
                             <span>Users</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/questions"
+                           class="{{ Route::is('questions*') ? 'active ' : '' }}nav-link d-flex align-items-center">
+                            <i class="fas fa-question"></i> &nbsp;&nbsp;
+                            <span>Questions</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/news"
+                           class="{{ Route::is('news*') ? 'active ' : '' }}nav-link d-flex align-items-center">
+                            <i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;
+                            <span>News</span>
+                        </a>
+                    </li>
                     <li class="/nav-item">
                         <a href="#"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();"
@@ -98,6 +113,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+
+<script src="{{ asset('js/editor.js') }}" defer></script>
 
 <script>
     $(document).ready(function() {

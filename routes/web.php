@@ -17,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::resource('/users','UserController');
+Route::resource('/questions','QuestionController');
+Route::resource('/news','NewsController');

@@ -17,7 +17,8 @@
         "laravel/sanctum": "^2.4",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "tymon/jwt-auth": "^1.0"
+        "tymon/jwt-auth": "^1.0",
+      "ext-http": "*"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
